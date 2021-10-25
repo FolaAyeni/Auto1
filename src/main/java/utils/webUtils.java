@@ -13,7 +13,7 @@ import org.testng.Assert;
 
 import java.util.List;
 
-public class webUtils {
+public class  webUtils {
     protected WebDriver driver;
     protected WebDriverWait wait;
 
