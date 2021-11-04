@@ -4,6 +4,7 @@ import HomePage.HomePage1;
 import jdk.jfr.Description;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
 
 public class Homepage extends baseTest  {
 
@@ -12,7 +13,7 @@ public class Homepage extends baseTest  {
         driver.get("https://www.fleetcheck.co.uk/");
     }
 
-
+    @Test
     @Description("going to login page")
     public void checkLogin(){
         HomePage1 homePage1 = new HomePage1(driver);

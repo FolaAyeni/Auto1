@@ -35,8 +35,10 @@ public class HomePage1 extends webUtils {
 
     public void login(){
        click(home);
+       System.out.println("A");
        assertEquals(homepageText,"The UKs most recommended fleet management software");
-       click(login);
+        System.out.println("B");
+        click(login);
        isElementClickable(signIn);
     }
 
