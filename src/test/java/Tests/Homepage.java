@@ -13,12 +13,25 @@ public class Homepage extends baseTest  {
         driver.get("https://www.fleetcheck.co.uk/");
     }
 
-    @Test
+    @Test (priority = 3)
     @Description("going to login page")
     public void checkLogin(){
-        HomePage1 homePage1 = new HomePage1(driver);
-        homePage1.login();
+        HomePage1 Ayeni= new HomePage1(driver);
+        Ayeni.login();
     }
+    @Test (priority = 2)
+    @Description("going to request a demo")
+    public void checkRequestDemo(){
+        HomePage1 Ayeni = new HomePage1(driver);
+        Ayeni.setRequestADemo();
+    }
+    @Test (priority = 1)
+    @Description("going to request a demo2")
+    public void checkRequestDemo2() throws InterruptedException {
+        HomePage1 Ayeni = new HomePage1(driver);
+        Ayeni.setRequestADemo2();
+    }
+
 
     @AfterMethod
             public void reset (){

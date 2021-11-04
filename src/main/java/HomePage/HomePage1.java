@@ -13,8 +13,8 @@ public class HomePage1 extends webUtils {
     private final WebElement homepage = driver.findElement(By.id("page"));
     private final By home = By.xpath("//*[@id=\"mega-menu-item-3455\"]/a");
     private final By login = By.xpath("//*[@id=\"masthead\"]/div[1]/div/div/div[2]/ul/li[3]/a");
-    private final By requestADemo = By.className("est-internal-link est-tab-link");
-    private final By requestADemo2= By.xpath ("//*[@id=\"panel-3427-0-0-1\"]/div/div/div/a");
+    private final By requestADemo = By.xpath("//a[@class='est-internal-link est-tab-link']");
+    private final By requestADemo2= By.xpath("//*[@id=\"panel-3427-0-0-1\"]/div/div/div/a");
     private final By watchTheVideo= By.xpath ("//*[@id=\"panel-3427-1-1-0\"]/div/div/div/a");
     private final By fORSFleetOperator = By.xpath("//*[@id=\"panel-3427-2-1-0\"]/div/div/div/a/img");
     private final By drivingForBetterBusiness = By.xpath("//*[@id=\"panel-3427-4-0-0\"]/div/div/a/img");
@@ -31,19 +31,28 @@ public class HomePage1 extends webUtils {
     private final By viewAllOurCaseStudies= By.xpath("//*[@id=\"panel-3427-14-0-1\"]/div/div/div/a");
     private final By homepageText= By.xpath("//*[@id=\"panel-3427-0-0-0\"]/div/div/h1");
     private final By signIn = By.xpath("//*[@id=\"ctl00_ContentPlaceHolder1_txtUsername\"]");
+    private final By getYourFreeDemoOfFc= By.xpath("//h3[contains(text(),'Get your free demo of FleetCheck')]");
+
+
 
 
     public void login(){
        click(home);
-       System.out.println("A");
        assertEquals(homepageText,"The UKs most recommended fleet management software");
-        System.out.println("B");
-        click(login);
+       click(login);
        isElementClickable(signIn);
     }
 
+    public void setRequestADemo () {
+        click(requestADemo);
+        assertEquals(getYourFreeDemoOfFc, "Get your free demo of FleetCheck");
+    }
 
-
+    public void setRequestADemo2 () throws InterruptedException {
+        Thread.sleep(3000);
+        click(requestADemo2);
+        assertEquals(getYourFreeDemoOfFc, "Get your free demo of FleetCheck");
+    }
 
 
 
