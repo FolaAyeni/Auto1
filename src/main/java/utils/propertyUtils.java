@@ -1,4 +1,4 @@
 package utils;
 
-public class propertyUtils {
+public class propertyUtils  {
 }
