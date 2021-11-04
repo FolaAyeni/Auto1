@@ -12,6 +12,7 @@ public class baseTest {
     public void setup() {
         String path = System.getProperty("user.dir");
         System.setProperty("webdriver.edge.driver", path + "/src/main/resources/msedgedriver.exe");
+
         driver = new EdgeDriver();
 
         driver.manage().window().maximize();
